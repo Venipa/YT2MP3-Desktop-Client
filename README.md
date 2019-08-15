@@ -24,6 +24,16 @@ npm start
 ## Help
 * **[macOS] The App won't open. Error: not a verify Developer** Open the App again but while having the `control` Key pressed 
 
+## Comparisson
+| Browser | CPU | RAM | energy usage |
+| --- | --- | --- | --- |
+| Desktop App | Base | Base | Base |
+| Safari | 3x | 4x | 3x |
+| Firefox | 6x | 7x | 2x |
+| Chrome | 2x | 2x | 3x |
+
+Note: Tests completed on macOS Mojave Version 10.14.5, Safari Version 12.1.1, Firefox Quantum Version 68.0.1, Chrome Version
+
 ## Built With
 
 * [Electron](http://electronjs.org) - Framework
