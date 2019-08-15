@@ -21,10 +21,13 @@ npm install
 npm start
 ```
 
+## Help
+* **[macOS] The App won't open. Error: not a verify Developer** Open the App again but while having the `control` Key pressed 
+
 ## Built With
 
 * [Electron](http://electronjs.org) - Framework
-* [Electron-Packager](electron packager) - Packager
+* [Electron-Packager](https://www.npmjs.com/package/electron-packager) - Packager
 * [YT2MP3](http://yt2mp3.venipa.net) - The Website this App is absed on
 
 ## Authors
