@@ -1,0 +1,17 @@
+{
+  "name": "mokka",
+  "productName": "YT2MP3 Desktop",
+  "version": "1.0.0",
+  "description": "Project Mokka: A Multi-OS Desktop Client for the beloved Youtube to MP3 Conveter by Venipa.",
+  "main": "main.js",
+  "author": "JNSAPH",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^6.0.2",
+    "electron-packager": "^14.0.4"
+  },
+  "dependencies": {}
+}
