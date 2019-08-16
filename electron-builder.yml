@@ -53,3 +53,5 @@ rpm:
     - libsecret
 publish:
   provider: github
+  vPrefixedTagName: true
+  releaseType: "draft"
