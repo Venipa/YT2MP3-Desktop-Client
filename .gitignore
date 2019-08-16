@@ -8,3 +8,4 @@ node_modules/
 thumbs.db
 .idea/
 /package-lock.json
+/cert.*

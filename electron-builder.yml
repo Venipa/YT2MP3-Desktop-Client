@@ -14,6 +14,7 @@ win:
   target:
     - {target: nsis, arch: x64}
     - {target: nsis, arch: ia32}
+    - {target: appx, arch: x64}
 mac:
   category: "public.app-category.utility"
   target:
@@ -22,7 +23,12 @@ linux:
   target:
     - {target: deb, arch: x64}
   category: Utility
-
+appx:
+  applicationId: "Venipa.Youtube2Moe"
+  displayName: "Youtube 2 Moe"
+  identityName: "45113Venipa.Youtube2Moe"
+  publisher: "CN=2F47BCD9-7673-4A24-8CB6-30C853BC3433"
+  publisherDisplayName: "Venipa"
 nsis:
   menuCategory: true
   oneClick: false
