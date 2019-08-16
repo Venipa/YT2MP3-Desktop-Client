@@ -5,16 +5,14 @@
 
 trigger:
 - master
-
+variables:
+  github_token: $(GH_TOKEN)
 
 jobs:
 - job: Windows
   pool:
     vmImage: 'vs2017-win2016'
   steps:
-  - task: CmdLine@2
-    inputs:
-      script: 'set GH_TOKEN=$(GH_TOKEN)'
   - task: NodeTool@0
     inputs:
       versionSpec: '10.x'
@@ -23,17 +21,14 @@ jobs:
       npm install -g yarn
       yarn
       yarn build
-      yarn build:x64 --win
-      yarn build:x86 --win
-      yarn upload -p always
+      npx cross-env GH_TOKEN=$(github_token) yarn build:x64 --win
+      npx cross-env GH_TOKEN=$(github_token) yarn build:x86 --win
+      npx cross-env GH_TOKEN=$(github_token) yarn upload
     displayName: 'windows install and build'
 - job: macOS
   pool:
     vmImage: 'macOS-10.13'
   steps:
-  - task: CmdLine@2
-    inputs:
-      script: 'export GH_TOKEN=$(GH_TOKEN)'
   - task: NodeTool@0
     inputs:
       versionSpec: '10.x'
@@ -42,16 +37,13 @@ jobs:
       npm install -g yarn
       yarn
       yarn build
-      yarn build:x64 --mac
-      yarn upload -p always
+      npx cross-env GH_TOKEN=$(github_token) yarn build:x64 --mac
+      npx cross-env GH_TOKEN=$(github_token) yarn upload
     displayName: 'mac install and build'
 - job: Linux
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
-  - task: CmdLine@2
-    inputs:
-      script: 'export GH_TOKEN=$(GH_TOKEN)'
   - task: NodeTool@0
     inputs:
       versionSpec: '10.x'
@@ -60,7 +52,7 @@ jobs:
       npm install -g yarn
       yarn
       yarn build
-      yarn build:x64 --linux
-      yarn build:x86 --linux
-      yarn upload -p always
+      npx cross-env GH_TOKEN=$(github_token) yarn build:x64 --linux
+      npx cross-env GH_TOKEN=$(github_token) yarn build:x86 --linux
+      npx cross-env GH_TOKEN=$(github_token) yarn upload
     displayName: 'linux install and build'
