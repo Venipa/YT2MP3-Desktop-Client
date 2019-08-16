@@ -38,7 +38,7 @@ Note: Tests completed on macOS Mojave Version 10.14.5, Safari Version 12.1.1, Fi
 
 * [Electron](http://electronjs.org) - Framework
 * [Electron-Packager](https://www.npmjs.com/package/electron-packager) - Packager
-* [YT2MP3](http://yt2mp3.venipa.net) - The Website this App is absed on
+* [YT2MP3](https://yt2mp3.venipa.net) - The Website this App is absed on
 
 ## Authors
 
@@ -50,4 +50,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-Thanks to Venipa for making this Awseome Website. Check it out at http://yt2mp3.venipa.net
+Thanks to Venipa for making this Awesome Website. Check it out at https://yt2mp3.venipa.net

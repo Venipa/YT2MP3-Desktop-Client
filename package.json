@@ -5,44 +5,14 @@
   "description": "Project Mokka: A Multi-OS Desktop Client for the beloved Youtube to MP3 Conveter by Venipa.",
   "author": "JNSAPH",
   "license": "ISC",
-  "build": {
-    "appId": "yt2mp3.venipa.net",
-    "mac": {
-      "category": "public.app-category.utility",
-      "artifactName": "${productName}-${version}-${platform}_${arch}.${ext}",
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "x64"
-          ]
-        }
-      ]
-    },
-    "win": {
-      "artifactName": "${productName}-${version}-${platform}_${arch}.${ext}",
-      "target": ["nsis:ia32", "nsis:x64"]
-    },
-    "linux": {
-      "artifactName": "${productName}-${version}-${platform}_${arch}.${ext}",
-      "target": [
-        {
-          "target": "pkg",
-          "arch": [
-            "x64"
-          ]
-        }
-      ]
-    }
-  },
   "scripts": {
     "start": "npx electron-webpack dev",
     "build": "npx electron-webpack",
     "pack": "npm run build:x64 -- -mwl && npm run build:x86 -- --win",
     "env": "npx cross-env ARTIFACT_NAME=\"${productName}-${version}-${electronDownload.platform}_${electronDownload.arch}.${ext}\"",
-    "build:x64": "npx electron-builder --x64",
-    "build:x86": "npx electron-builder --ia32",
-    "build:win": "npx electron-builder --win"
+    "build:x64": "npx electron-builder -c ./electron-builder.yml --x64",
+    "build:x86": "npx electron-builder -c ./electron-builder.yml --ia32",
+    "build:win": "npx electron-builder -c ./electron-builder.yml --win"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
@@ -52,5 +22,7 @@
     "electron-webpack": "^2.7.4",
     "webpack": "^4.39.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "source-map-support": "^0.5.13"
+  }
 }

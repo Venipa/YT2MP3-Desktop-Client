@@ -1,44 +1,55 @@
-productName: Yangster
-appId: theia.yangster
+productName: Youtube 2 MP3 (Mokka)
+appId: net.venipa.mokka-yt2mp3
+artifactName: ${name}-${version}-${os}-${arch}.${ext}
 
 asar: false
 directories:
-  buildResources: resources
+  output: ./dist
 files:
-  - 'src-gen/**/*'
-  - 'lib/**/*'
-  - 'node_modules/**/*'
   - package.json
+  - LICENSE
+  - README.md
 
 win:
+  artifactName: ${name}-${version}-windows-${arch}.${ext}
   target:
-    - nsis
+    - {target: nsis, arch: x64}
+    - {target: nsis, arch: ia32}
 mac:
+  category: "public.app-category.utility"
   target:
     - dmg
 linux:
   target:
     - deb
     - AppImage
-  category: Development
-  icon: resources/icons
+  category: Utility
 
 nsis:
   menuCategory: true
   oneClick: false
-  perMachine: true
-  installerHeaderIcon: resources/icon.ico
-  installerIcon: resources/icon.ico
-  uninstallerIcon: resources/icon.ico
-  installerSidebar: resources/installerSidebar.bmp
-  uninstallerSidebar: resources/installerSidebar.bmp
+  perMachine: false
   allowToChangeInstallationDirectory: true
-  runAfterFinish: false
-  artifactName: ${productName}-Installer-${version}.${ext}
-dmg:
-  background: resources/dmgInstaller.tiff
-  icon: resources/icon.icns
-  iconSize: 128
+  artifactName: ${name}-${version}-windows-${arch}-nsis-installer.${ext}
+deb:
+  depends:
+    # default Electron dependencies
+    - gconf2
+    - gconf-service
+    - libnotify4
+    - libappindicator1
+    - libxtst6
+    - libnss3
+    # keytar dependencies
+    - libsecret-1-0
 
+rpm:
+  depends:
+    # default Electron dependencies
+    - libXScrnSaver
+    - libappindicator
+    - libnotify
+    # keytar dependencies
+    - libsecret
 publish:
   provider: github
