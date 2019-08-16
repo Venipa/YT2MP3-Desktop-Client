@@ -21,9 +21,8 @@ jobs:
       npm install -g yarn
       yarn
       yarn build
-      npx cross-env GH_TOKEN=$(github_token) yarn build:x64 --win
-      npx cross-env GH_TOKEN=$(github_token) yarn build:x86 --win
-      npx cross-env GH_TOKEN=$(github_token) yarn upload
+      npx cross-env GH_TOKEN=$(github_token) yarn build:all --publish always --win
+      # npx cross-env GH_TOKEN=$(github_token) yarn upload
     displayName: 'windows install and build'
 - job: macOS
   pool:
@@ -37,8 +36,8 @@ jobs:
       npm install -g yarn
       yarn
       yarn build
-      npx cross-env GH_TOKEN=$(github_token) yarn build:x64 --mac
-      npx cross-env GH_TOKEN=$(github_token) yarn upload
+      npx cross-env GH_TOKEN=$(github_token) yarn build:all --publish always --mac
+      # npx cross-env GH_TOKEN=$(github_token) yarn upload
     displayName: 'mac install and build'
 - job: Linux
   pool:
@@ -52,7 +51,6 @@ jobs:
       npm install -g yarn
       yarn
       yarn build
-      npx cross-env GH_TOKEN=$(github_token) yarn build:x64 --linux
-      npx cross-env GH_TOKEN=$(github_token) yarn build:x86 --linux
-      npx cross-env GH_TOKEN=$(github_token) yarn upload
+      npx cross-env GH_TOKEN=$(github_token) yarn build:all --publish always --linux
+      # npx cross-env GH_TOKEN=$(github_token) yarn upload
     displayName: 'linux install and build'

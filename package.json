@@ -12,12 +12,12 @@
   "scripts": {
     "start": "npx electron-webpack dev",
     "build": "npx electron-webpack",
+    "build:all": "npx electron-builder -c ./electron-builder.yml",
     "pack": "npm run build:x64 -- -mwl && npm run build:x86 -- --win",
     "env": "npx cross-env ARTIFACT_NAME=\"${productName}-${version}-${electronDownload.platform}_${electronDownload.arch}.${ext}\"",
     "build:x64": "npx electron-builder -c ./electron-builder.yml --x64",
     "build:x86": "npx electron-builder -c ./electron-builder.yml --ia32",
-    "build:win": "npx electron-builder -c ./electron-builder.yml --win",
-    "upload": "npx electron-builder -c ./electron-builder.yml -p \"always\""
+    "build:win": "npx electron-builder -c ./electron-builder.yml --win"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
