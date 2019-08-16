@@ -1,0 +1,10 @@
+/dist/
+/build/
+
+
+.DS_Store
+dist/
+node_modules/
+thumbs.db
+.idea/
+/package-lock.json

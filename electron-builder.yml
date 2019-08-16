@@ -1,0 +1,44 @@
+productName: Yangster
+appId: theia.yangster
+
+asar: false
+directories:
+  buildResources: resources
+files:
+  - 'src-gen/**/*'
+  - 'lib/**/*'
+  - 'node_modules/**/*'
+  - package.json
+
+win:
+  target:
+    - nsis
+mac:
+  target:
+    - dmg
+linux:
+  target:
+    - deb
+    - AppImage
+  category: Development
+  icon: resources/icons
+
+nsis:
+  menuCategory: true
+  oneClick: false
+  perMachine: true
+  installerHeaderIcon: resources/icon.ico
+  installerIcon: resources/icon.ico
+  uninstallerIcon: resources/icon.ico
+  installerSidebar: resources/installerSidebar.bmp
+  uninstallerSidebar: resources/installerSidebar.bmp
+  allowToChangeInstallationDirectory: true
+  runAfterFinish: false
+  artifactName: ${productName}-Installer-${version}.${ext}
+dmg:
+  background: resources/dmgInstaller.tiff
+  icon: resources/icon.icns
+  iconSize: 128
+
+publish:
+  provider: github
