@@ -11,7 +11,6 @@ files:
   - README.md
 
 win:
-  artifactName: ${name}-${version}-windows-${arch}.${ext}
   target:
     - {target: nsis, arch: x64}
     - {target: nsis, arch: ia32}
@@ -29,7 +28,6 @@ nsis:
   oneClick: false
   perMachine: false
   allowToChangeInstallationDirectory: true
-  artifactName: ${name}-${version}-windows-${arch}-nsis-installer.${ext}
 deb:
   depends:
     # default Electron dependencies
